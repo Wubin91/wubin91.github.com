@@ -6,7 +6,7 @@ tagline: by wubin
 tag: [C++, algorithm]
 ---
 
-这道题和上一篇博客"[算法题：Bash游戏 V2](http://binwu.net/2014/10/10/51nod-bash-game-v2.html)"非常相似，只是现在每次可以拿的石子数变成了“1、2、···、K”颗：
+这道题和上一篇博客"[算法题：Bash游戏 V2](http://binwu.net/algorithm/2014/10/10/51nod-bash-game-v2/)"非常相似，只是现在每次可以拿的石子数变成了“1、2、···、K”颗：
 
 <!--more-->
 
