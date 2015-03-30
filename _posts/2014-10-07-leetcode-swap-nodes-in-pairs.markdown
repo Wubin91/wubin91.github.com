@@ -1,7 +1,7 @@
 ---
 layout: post
 category: algorithm
-title: Swap Nodes in Pairs
+title: "Swap Nodes in Pairs"
 tagline: by wubin
 tags: [algorithm,C++]
 ---
