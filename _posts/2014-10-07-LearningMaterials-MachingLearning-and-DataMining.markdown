@@ -24,7 +24,7 @@ tags: [Data Mining]
 
 7. LinkedIn 开源的机器学习工具包：[1](https://github.com/linkedin/ml-ease) & [2](http://engineering.linkedin.com/large-scale-machine-learning/open-sourcing-ml-ease)，支持单机、Hadoop cluster 和 Spark cluster，重点是 logistic regression 算法
 
-8. [20 Free Big Data Sources Everyone Should Know|SmartDate Collective](http://smartdatacollective.com/bernardmarr/235366/big-data-20-free-big-data-sources-everyone-should-know)
+8. [20 Free Big Data Sources Everyone Should Know](http://smartdatacollective.com/bernardmarr/235366/big-data-20-free-big-data-sources-everyone-should-know)
 
 9. 相关比赛：KDD cup-难度较大，kaggle 小比赛：inclass.kaggle.com
 
