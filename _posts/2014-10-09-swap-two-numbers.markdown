@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Swap Two Numbers
 category: algorithm
+title: Swap Two Numbers
 tagline: by wubin
-tag: algorithm
+tags: [algorithm,C++]
 ---
 
 前几天在看[互联网面试总结（下）](http://blog.renren.com/share/221293470/14132198643)的时候发现一道很有意思的题目，是作者在参加清华复试时候的一道笔试题，如下：
