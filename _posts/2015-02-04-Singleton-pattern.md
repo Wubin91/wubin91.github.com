@@ -22,6 +22,7 @@ tag: 软件开发
 
     4. 适当实现 allocWithZone，copyWithZone，release 和 autorelease（后两者在 ARC 模式中无需编写）。
 
+代码如下：
 
     @implementation customObject
 
