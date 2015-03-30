@@ -24,7 +24,9 @@ tag: [C++]
         int hour, minute, second;
     };
 
-如果私有成员紧接着类名称，则关键字private可以省略。public | protected | private 关键字可以多次出现，顺序任意。
+如果私有成员紧接着类名称，则关键字private可以省略。
+
+public，protected，private 关键字可以多次出现，顺序任意。
 
 函数的原型声明要写在类体中，原型说明了函数的参数表和返回值类型。而函数的具体实现是写在“类定义之外”的。
 
