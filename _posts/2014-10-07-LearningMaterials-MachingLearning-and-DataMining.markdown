@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Machine Learning & Data Mining 资料整合
-category: 机器学习-数据挖掘
+category: ML_DM
 tagline: by wubin
 tags: [Machine-Learning,Data-Mining]
 ---
