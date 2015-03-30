@@ -6,7 +6,7 @@ tagline: by wubin
 tags: [algorithm,C++]
 ---
 
-####Swap Nodes in Pairs
+###Swap Nodes in Pairs
 
 Given a linked list, swap every two adjacent nodes and return its head.
 For example,
