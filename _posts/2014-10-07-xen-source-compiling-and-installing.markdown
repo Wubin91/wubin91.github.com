@@ -8,7 +8,7 @@ tags: Xen
 
 ####1. First of all, you should install a clean Ubuntu Server (Amd-64) on your server (Version 14.04 is strongly recommended for the best compatibility).
 
-
+<!--more-->
 
 ####2. Get the source code of Xen ready by "git clone" (If some errors occur in this step, you may check the /ect/apt/source.list and update it by running `$ sudo apt-get update`*)
 {% highlight ruby %}

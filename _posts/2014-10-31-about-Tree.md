@@ -15,6 +15,7 @@ tag: [C++, algorithm]
  * Definition for binary tree
  * struct TreeNode {
  *     int val;
+<!--more-->
  *     TreeNode *left;
  *     TreeNode *right;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}

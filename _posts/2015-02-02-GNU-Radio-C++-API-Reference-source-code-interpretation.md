@@ -13,7 +13,7 @@ tag: [gnuradio, C++]
 如其名，该类中的模块都是对字节或者比特位的一些打包和转换操作，原理比较简单，无非是一下与或非和移位操作。
 
 ####[pack_k_bits](http://gnuradio.org/doc/doxygen/classgr_1_1blocks_1_1kernel_1_1pack__k__bits.html)
-
+<!--more-->
 #####作用：Converts a vector of bytes with 1 bit in the LSB to a byte with k relevent bits.
 
 #####Public 成员函数

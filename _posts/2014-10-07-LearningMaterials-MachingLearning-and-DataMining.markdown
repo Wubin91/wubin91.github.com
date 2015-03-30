@@ -8,6 +8,7 @@ tag: Machine-Learning&Data-Mining
 
 ###以下是我搜集的ML和DM方面的资料，持续更新：
 * 1 [机器学习常见算法分类汇总 | 码农网](http://www.codeceo.com/article/machine-learning.html#13688-tsina-1-10644-57d4d90508c08d162896a47818ce968b)
+<!--more-->
 * 2 [`数据挖掘十大经典算法 | CSDN博客`](http://blog.csdn.net/aladdina/article/details/4141177) (内含十个算法具体介绍)
 * 3 [支持向量机通俗导论（理解 SVM 的三层境界）| CSDN博客](http://blog.csdn.net/v_july_v/article/details/7624837) (强烈推荐关注博主)
 * 4 [教你如何迅速秒杀掉：99% 的海量数据处理面试题 | CSDN博客](http://blog.csdn.net/v_july_v/article/details/7382693)

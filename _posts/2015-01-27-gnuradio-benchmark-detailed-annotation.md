@@ -11,7 +11,7 @@ tag: gnuradio
 
 运行 ./benchmark_rx.py -h 可以看到有很多需要配置的参数，并不需要每一项都进行配置，因为有些参数已经给出了默认值。但是一般至少需要制定 接收频率（-f），子板（已取消？）和比特速率（-r），所以我们可以输入：
 
-
+<!--more-->
      {% highlight C++ %}
      ./benchmark_rx.py -f 900e6 -R A -r 400e3
      {% endhighlight %}

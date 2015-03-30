@@ -19,6 +19,7 @@ tag: C++
     #ifdef WINDOWS 
     #define MYTYPE long 
     #else 
+<!--more-->
     #define MYTYPE float 
     #endif
 
