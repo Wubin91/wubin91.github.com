@@ -3,7 +3,7 @@ layout: post
 title: Xen-4.4 Installation from source
 category: Cloud Computing
 tagline: by wubin
-tags: [Cloud Computing,Xen]
+tags: [Cloud Computing,Xen,Linux]
 ---
 
 
