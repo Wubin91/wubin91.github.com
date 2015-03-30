@@ -3,7 +3,7 @@ layout: post
 category: algorithm
 title: leetcode: Swap Nodes in Pairs
 tagline: by wubin
-tag: algorithm
+tags: [algorithm,C++]
 ---
 
 ##Swap Nodes in Pairs##
