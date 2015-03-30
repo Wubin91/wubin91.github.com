@@ -1,12 +1,12 @@
 ---
 layout: post
-title: leetcode: Swap Nodes in Pairs
 category: algorithm
+title: leetcode: Swap Nodes in Pairs
 tagline: by wubin
 tag: algorithm
 ---
 
-##Swap Nodes in Pairs
+##Swap Nodes in Pairs##
 
 Given a linked list, swap every two adjacent nodes and return its head.
 For example,
