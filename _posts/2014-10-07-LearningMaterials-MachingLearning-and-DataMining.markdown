@@ -6,7 +6,7 @@ tagline: by wubin
 tag: Machine-Learning&Data-Mining
 ---
 
-###以下是我搜集的ML和DM方面的资料，持续更新：
+##以下是我搜集的ML和DM方面的资料，持续更新：
 * 1 [机器学习常见算法分类汇总 | 码农网](http://www.codeceo.com/article/machine-learning.html#13688-tsina-1-10644-57d4d90508c08d162896a47818ce968b)
 <!--more-->
 * 2 [`数据挖掘十大经典算法 | CSDN博客`](http://blog.csdn.net/aladdina/article/details/4141177) (内含十个算法具体介绍)
