@@ -1,7 +1,7 @@
 ---
 layout: post
 category: algorithm
-title: 两个超大正整数想加
+title: 两个超大正整数相加
 tags: [algorithm, C++]
 tagline: by wubin
 ---
