@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "算法题：回文字符串"
+title: 回文字符串
 category: algorithm
+tagline: by wubin
 tag: [C++, algorithm]
 ---
 

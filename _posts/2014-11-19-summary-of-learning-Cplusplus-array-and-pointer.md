@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "2014-11-19-数组和指针(C++ Primer - 4th Edition - Chapter 4)"
+title: 数组和指针
 category: C++学习总结
+tagline: by wubin
 tag: [C++]
 ---
 

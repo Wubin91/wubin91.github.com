@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "关于二叉树的一些算法"
+title: 关于二叉树的一些算法
 category: algorithm
+tagline: by wubin
 tag: [C++, algorithm]
 ---
 

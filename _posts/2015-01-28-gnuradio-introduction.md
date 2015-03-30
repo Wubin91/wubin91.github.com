@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "gnuradio入门介绍"
+title: gnuradio入门介绍
 category: 软件无线电
+tagline: by wubin
 tag: gnuradio
 ---
 

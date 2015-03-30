@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "gnuradio benchmark 详解"
+title: gnuradio benchmark 详解
 category: 软件无线电
+tagline: by wubin
 tag: gnuradio
 ---
 

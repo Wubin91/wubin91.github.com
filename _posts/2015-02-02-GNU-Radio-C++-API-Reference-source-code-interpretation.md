@@ -2,6 +2,7 @@
 layout: post
 title: GNU Radio C++ API Reference 源码解析
 category: 软件无线电
+tagline: by wubin
 tag: [gnuradio, C++]
 ---
 

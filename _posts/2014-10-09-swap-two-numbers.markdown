@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "算法题：Swap Two Numbers"
+title: Swap Two Numbers
 category: algorithm
+tagline: by wubin
 tag: algorithm
 ---
 

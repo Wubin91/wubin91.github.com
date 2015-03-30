@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "C++ 要点"
+title: C++ 要点
 category: C++
+tagline: by wubin
 tag: C++
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "算法题：聪明的木匠(C++)"
+title: 聪明的木匠
 category: algorithm
+tagline: by wubin
 tag: algorithm
 ---
 

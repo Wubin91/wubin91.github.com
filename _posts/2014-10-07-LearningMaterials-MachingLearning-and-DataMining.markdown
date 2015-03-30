@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Machine Learning & Data Mining 资料整合"
+title: Machine Learning & Data Mining 资料整合
 category: Machine-Learning&Data-Mining
+tagline: by wubin
 tag: Machine-Learning&Data-Mining
 ---
 

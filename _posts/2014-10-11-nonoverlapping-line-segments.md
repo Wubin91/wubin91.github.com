@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "算法题：不重叠的线段"
+title: 不重叠的线段
 category: algorithm
+tagline: by wubin
 tag: [C++, algorithm]
 ---
 

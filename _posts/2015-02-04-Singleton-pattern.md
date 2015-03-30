@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "单例类设计模式"
+title: 单例类设计模式
 category: 软件开发
+tagline: by wubin
 tag: 软件开发
 ---
 

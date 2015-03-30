@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "算法题：Bash游戏 V2"
+title: Bash游戏 V2
 category: algorithm
+tagline: by wubin
 tag: [C++, algorithm]
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "leetcode: Swap Nodes in Pairs (C++)"
+title: leetcode: Swap Nodes in Pairs (C++)
 category: algorithm
+tagline: by wubin
 tag: algorithm
 ---
 

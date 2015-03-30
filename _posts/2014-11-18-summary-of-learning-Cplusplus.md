@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "C++ 学习总结"
+title: C++ 学习总结
 category: C++学习总结
+tagline: by wubin
 tag: [C++]
 ---
 

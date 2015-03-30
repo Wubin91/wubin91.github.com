@@ -11,37 +11,32 @@ tag: C++
 * #define 的保护
 
 项目 foo 中的头文件 foo/src/bar/baz.h 按如下方式保护：
-{% highlight ruby %}
-#ifndef FOO_BAR_BAZ_H_
-#define FOO_BAR_BAZ_H_
-#endif //FOO_BAR_BAZ_H_
 
-#ifdef WINDOWS 
-#define MYTYPE long 
-#else 
-#define MYTYPE float 
-#endif
+    #ifndef FOO_BAR_BAZ_H_
+    #define FOO_BAR_BAZ_H_
+    #endif //FOO_BAR_BAZ_H_
 
-#ifndef WINDOWS 
-#define MYTYPE long 
-#else 
-#define MYTYPE float 
-#endif
-{% endhighlight %}
+    #ifdef WINDOWS 
+    #define MYTYPE long 
+    #else 
+    #define MYTYPE float 
+    #endif
+
+    #ifndef WINDOWS 
+    #define MYTYPE long 
+    #else 
+    #define MYTYPE float 
+    #endif
 
 用于代码调试：
 
-{% highlight ruby %}
-#ifdef DEBUG 
-print ("device_open(%p) ", file); 
-#endif
-{% endhighlight %}
+    #ifdef DEBUG 
+    print ("device_open(%p) ", file); 
+    #endif
 
 在它前面必须有：
 
-{% highlight ruby %}
-#define DEBUG
-{% endhighlight %}
+    #define DEBUG
 
 起到一个开关作用。
 
