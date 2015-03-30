@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Google C++ 编程规范总结"
+title: Google C++ 编程规范总结
 category: C++
+tagline: by wubin
 tag: C++
 ---
 
