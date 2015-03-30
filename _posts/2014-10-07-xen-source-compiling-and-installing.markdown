@@ -6,11 +6,13 @@ tagline: by wubin
 tags: [Cloud Computing,Xen]
 ---
 
+
 The first step is to intall a clean Ubuntu Server (Amd-64) on your server (Version 14.04 is strongly recommended for the best compatibility).
 
-<!--more-->
 
 Get the source code of Xen ready by `git clone` (If some errors occur in this step, you may check the /ect/apt/source.list and update it by running `$ sudo apt-get update`*)
+
+<!--more-->
 
 	$ git clone git://xenbits.xen.org/xen.git
 
