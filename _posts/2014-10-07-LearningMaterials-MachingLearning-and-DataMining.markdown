@@ -6,7 +6,7 @@ tagline: by wubin
 tags: [Data Mining]
 ---
 
-###以下是我搜集的ML和DM方面的资料，持续更新：
+以下是我搜集的ML和DM方面的资料，持续更新：
 
 <!--more-->
 
