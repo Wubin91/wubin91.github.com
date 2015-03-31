@@ -14,6 +14,7 @@ tag: [C++, algorithm]
 
 * 最简单的就是直接递归：
 
+
     /**
      * Definition for binary tree
      * struct TreeNode {
@@ -33,7 +34,9 @@ tag: [C++, algorithm]
         }
     };
 
+
 * 非递归（层次遍历二叉树）：
+
 
     /**
      * Definition for binary tree
@@ -64,9 +67,11 @@ tag: [C++, algorithm]
         }
     };
 
+
 ###二、求二叉树的最小深度
 
 * 递归（类似求最大深度时的递归方法）：当节点的左右节点有一个为空时，记该节点的深度为非空的子节点的深度加1；当节点的左右节点都非空时，记该节点的深度为左右节点深度较小者加1。
+
 
     /**
      * Definition for binary tree
@@ -96,7 +101,9 @@ tag: [C++, algorithm]
         }
     };
 
+
 * 非递归：使用队列 FIFO 的属性来层次遍历二叉树，采用 C++ STL 中的 queue。
+
 
     /**
      * Definition for binary tree
