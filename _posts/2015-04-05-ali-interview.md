@@ -68,7 +68,7 @@ tagline: by wubin
         }
     }
 
-如果不太了解 priority_queue，请移步[priority_queue用法](http://blog.chinaunix.net/uid-533684-id-2100009.html)
+如果不太了解 priority_queue，请移步[priority_queue用法](http://blog.chinaunix.net/uid-533684-id-2100009.html)。
 
 另附 priority 提供的一些函数：
 
