@@ -1,7 +1,7 @@
 ---
 layout: post
 category: Interview
-title: 2015阿里实习生C++开发笔试附加题
+title: 2015阿里实习生C++研发笔试附加题
 tags: [Interview,C++,algorithm]
 tagline: by wubin
 ---
