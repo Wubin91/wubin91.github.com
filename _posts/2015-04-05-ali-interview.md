@@ -96,3 +96,92 @@ tagline: by wubin
 1. 实现一个对固定大小内存块进行管理的通用 FreeList 类，给出定义和实现。要求不能使用 STL 中的容器类。定义类的接口和实现时注意通用性、健壮性和可测试性。
 2. 如果该类的对象可能会被多个 thread 同时访问，请描述如何保证线程安全。有没有办法在保证线程安全的同时尽可能增大并发度？如果有也请描述你的思路。
 
+分析：这道题的思路是先给 FreeList 分配一个大的内存空间，接下来使用的内存，都从该 FreeList 的空闲内存中获取，而 FreeList 需记录好哪些内存已被使用，哪些未被使用。`注意：此时的 FreeList 最好使用单例类，确保这个大的内存空间唯一。`
+
+代码：
+
+    #include<iostream>
+    using namespace std;
+
+    const int PointerArraySize = 1000;
+
+    class FreeList {
+    private:
+        void *p;
+        bool unused[PointerArraySize];
+        FreeList() {
+            // 构造函数是私有的
+            p = (void *)new int[PointerArraySize];
+            for(int i = 0; i < PointerArraySize; i++) {
+                unused[i] = true;
+            }
+        }
+        
+    public:
+        static FreeList *sharedInstance() {    // FreeList 为单例类
+            static FreeList *freeList;
+            if (freeList == NULL)       // 判读是否第一次调用
+            freeList = new FreeList();
+            return freeList;
+        }
+
+        void *getMemory(unsigned size) {
+            for (int i = 0; i < PointerArraySize; i++) {    //遍历寻找是否有满足条件的内存块
+                int cnt = 0;
+                int start_i = i;
+                while (unused[i] && i < PointerArraySize) {
+                    cnt++;
+                    i++;
+                }
+                if (cnt * PointerArraySize * sizeof(int) >= size) { //如果有，则拿来用
+                    int tmp_start_i = start_i;
+                    while (tmp_start_i < i) {
+                        unused[i] = false;
+                        tmp_start_i++;
+                    }
+                    return p + start_i; //返回分配的内存的起始地址
+                }
+            }
+            void *q = (void *)new int[size / sizeof(int) + 1];  //如果没有满足条件的内存块，则由系统分配
+            return q;
+        }
+
+        void *delMemory(void *&del_p, unsigned size) {
+            if(del_p - p < 1000 && del_p - p >= 0) {    //如果要回收的内存在 FreeList 内
+                int length = size / sizeof(int) + 1;
+                for(int i = del_p - p; i < length; i++) {
+                    unused[i] = true;
+                }
+            }
+            else {              //否则直接调用系统的回收内存函数
+                delete[] del_p;
+            }
+            del_p = NULL;
+        }
+    }
+
+如果该类的对象被多个 thread 同时访问，可以在 FreeList 设置一个信号量，它的值为 1。当进来一个 thread 需要 FreeList 分配内存时，我们首先查询该信号量是否为 1，如果为 1，那么将其减 1 后置为 0，为该 thread 分配内存。处理完后再将该值加 1 置为 1。如果 thread 查询到信号量为 0，那么分配内存的请求进入等待状态，直到其它 thread 结束后信号量的值恢复为 1。
+
+此外，如果需要在保证线程安全的同时尽可能增大并发度，则可以设置多个 FreeList（例如 6 个），每个 FreeList 大小相同但相互独立。在这 6 个 FreeList 之上设置一个管理类（同样也是单例类）对它们进行管理，该管理类实时统计着每个 FreeList 中的剩余空间量，为用户每次内存分配请求决策出究竟使用哪一个 FreeList。同时，每一个 FreeList 都有它自己的信号量来处理在它上面内存分配的请求。
+
+三、假设这样一个场景：但高很多用户并发获取服务，server 端资源不足时，希望用户能够按照预先分配的配额来使用资源。
+
+比如预先定义好 user1，user2，user3 的配额是 20%，30%，50%，资源争抢时希望服务器有 20% 的服务能力分配给 user1，30% 给 user2，50% 给 user3。
+
+但是如果某个时刻只有 user1 的请求，server 还是要把 100% 的服务能力分配给 user1 以充分利用资源；又如某个时间段只有 user2/user3 在访问服务，则按照 30%:50% 的比率来分配资源。
+
+需要通过一个类似于队列的 ManagementQueue 类来封装上述功能。
+
+入队的时候需要提供 user id（32位正整数）以及用户的任务（Task）。我们假设系统的用户数是有上限的，不会超过 10 个。
+
+当队列中各个用户的请求均非空时，要求出队的 Task 分布符合用户的配额设置。延续上面的例子如果连续出队 100 次，要求 user1 的 Task 有 20 个左右，user2 的 Task 30 个左右，user3 的 50 个左右。
+
+这里出队的 Task 恰好能对应服务器的服务能力。
+
+要求：
+
+1. 给出关键数据结构以及 ManagementQueue 的定义。用户任务 Task 可以认为是一个已经实现的类来使用。可以使用 STL 容器类。
+2. 实现出队方法 Dequeue()，请尽可能写健壮的代码
+
+注意：这里并不要求精确的按照比例分配任务，只要统计意义上满足预定义的配额比例就可以了。
+
