@@ -158,7 +158,7 @@ tagline: by wubin
             }
             del_p = NULL;
         }
-    }
+    };
 
 如果该类的对象被多个 thread 同时访问，可以在 FreeList 设置一个信号量，它的值为 1。当进来一个 thread 需要 FreeList 分配内存时，我们首先查询该信号量是否为 1，如果为 1，那么将其减 1 后置为 0，为该 thread 分配内存。处理完后再将该值加 1 置为 1。如果 thread 查询到信号量为 0，那么分配内存的请求进入等待状态，直到其它 thread 结束后信号量的值恢复为 1。
 
@@ -186,4 +186,70 @@ tagline: by wubin
 2. 实现出队方法 Dequeue()，请尽可能写健壮的代码
 
 注意：这里并不要求精确的按照比例分配任务，只要统计意义上满足预定义的配额比例就可以了。
+
+分析：题目中假设系统的用户数是有上限的，不会超过 10 个。那么我们可以建立 10 条 Task 队列，每条队列中保存一个 user 的 Task。每次调度时产生一个随机数，通过随机数的大小来决定从哪条队列中选取一个 Task 进行出队操作。
+
+例如：现在有 user1: 20%，user2: 30%，user3: 50%，那么我们有三条队列，分别保存这三个用户的 Task。每次调度时产生区间 [0, 10) 的随机数 x，若 0 <= x < 2 则调度 user1；若 2 <= x < 5 则调度 user2；若 5 <= x < 9 则调度 user3。
+
+代码如下：
+
+    #include<iostream>
+    #include<vector>
+    #include<queue>
+    #include<set>
+    #include<ctime>
+    using namespace std;
+
+    struct cmp {
+        bool operator() (const int &u1_id, const int &u2_id) {
+            return u1_id < u2_id;
+        }
+    };
+
+    class ManagementQueue {
+    private:
+        vector<queue<Task> > queue_array(10);   //保持10个task队列
+        set<int, cmp> userSet;
+        const float proportion[10] = {0.8, 0.6, 1.0, 1.2, 0.4, 0.8, 0.6, 1.0, 1.2, 0.4};    //各个User的配额
+        float all_proportion;       //当前队列中已有的User的配额和
+        ManagementQueue() {
+            //构造函数是私有的
+            all_proportion = 0;
+        }
+
+    public:
+        static ManagementQueue *sharedInstance() {    // FreeList 为单例类
+            static ManagementQueue *m_queue;
+            if (m_queue == NULL)       // 判读是否第一次调用
+            m_queue = new ManagementQueue();
+            return m_queue;
+        }
+
+        void inQueue(Task &t) {             //task入队函数
+            queue_array[ut.user_id].push(t.user_id);
+            set<User>::iterator find_iter = userSet.find(t.user_id);    如果集合中未有该User，则添加并刷新all_proportion
+            if(find_iter == userSet.end()) {
+                userSet.insert(t.user_id);
+                all_proportion += proportion[t.user_id];
+            }
+        }
+
+        void DeQueue() {
+
+            srand((unsigned)time(NULL));
+            int random_num = rand() % 10;   //产生一个10以内的随机数
+            float start = 0;
+            for(set<int>::iterator iter = userSet.begin(); iter != userSet.end(); iter++) {
+                if(start <=  random_num && random_num < proportion[*iter] / all_proportion * 10) {  //判断随机数落入的区间
+                    queue_array[*iter].pop();           //出队
+                    if(queue_array[*iter].empty()) {
+                        userSet.erase(*iter);
+                        all_proportion -= proportion[*iter];
+                    }
+                    break;
+                }
+                start = proportion[*iter] / all_proportion * 10;
+            }
+        }
+    };
 
