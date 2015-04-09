@@ -146,7 +146,7 @@ tagline: by wubin
             return q;
         }
 
-        void *delMemory(void *&del_p, unsigned size) {
+        void delMemory(void *&del_p, unsigned size) {
             if(del_p - p < 1000 && del_p - p >= 0) {    //如果要回收的内存在 FreeList 内
                 int length = size / sizeof(int) + 1;
                 for(int i = del_p - p; i < length; i++) {
