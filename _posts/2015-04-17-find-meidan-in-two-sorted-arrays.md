@@ -2,7 +2,7 @@
 layout: post
 category: algorithm
 title：有序数组找中位数
-tags: [C++, algorithm]
+tags: [C++,algorithm]
 tagline: by wubin
 ---
 
