@@ -16,13 +16,13 @@ An rvalue reference is a compound type very similar to C++'s traditional referen
 
 1. An lvalue reference is formed by placing an & after some type:
 
-	A a;
-	A& a_ref1 = a;	// an rvalue reference
+		A a;
+		A& a_ref1 = a;	// an rvalue reference
 
 2. An rvalue reference is formed by placing an && after some type:
 
-	A a;
-	A&& a_ref2 = a;	// an rvalue reference
+		A a;
+		A&& a_ref2 = a;	// an rvalue reference
 
 An rvalue reference behaves just like an lvalue reference except that it can bind to a temporary (an rvalue), whereas you can not bind a (non const) lvalue reference to an rvalue:
 
