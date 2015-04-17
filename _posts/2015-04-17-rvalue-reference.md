@@ -282,4 +282,6 @@ The definition of forward looks like this:
 		return a;
 	}
 	
-**References: **[A Brief Introduction to Rvalue References](http://www.artima.com/cppsource/rvalue.html)
+###References: 
+
+[A Brief Introduction to Rvalue References](http://www.artima.com/cppsource/rvalue.html)
