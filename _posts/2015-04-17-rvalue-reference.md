@@ -16,18 +16,24 @@ An rvalue reference is a compound type very similar to C++'s traditional referen
 
 * An lvalue reference is formed by placing an & after some type:
 
+
 	A a;
 	A& a_ref1 = a;	// an rvalue reference
+
 	
 * An rvalue reference is formed by placing an && after some type:
 
+
 	A a;
 	A&& a_ref2 = a;	// an rvalue reference
+
 	
 An rvalue reference behaves just like an lvalue reference except that it can bind to a temporary (an rvalue), whereas you can not bind a (non const) lvalue reference to an rvalue:
 
+
 	A& a_ref3 = A();	// Error!
 	A&& a_ref4 = A();	// Ok
+
 	
 It turns out that the combination of rvalue references and lvalue references is just what is needed to easily code `move semantics`.
 
