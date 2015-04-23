@@ -8,6 +8,8 @@ tagline: by wubin
 
 上层协议是如何使用下层协议提供的服务的呢？其实这是通过封装（Encapsulation）实现的。应用程序数据在发送到物理网络上之前，将沿着协议栈从上往下依次传递。每层协议都将在上层数据的基础上加上自己的头部信息（有时还包括尾部信息），以实现该层的功能，这个过程就称为封装，如下图所示：
 
+<!--more-->
+
 ![封装](/img/Encapsulation.png)
 
 经过TCP封装后的数据称为TCP报文段（TCP message segment），或者简称TCP段。TCP协议为通信双方维持一个连接，并且在内核中存储相关数据。这部分数据中的TCP头部信息和TCP内核缓冲区（发送缓冲区和接收缓冲区）数据一起构成了TCP报文段，如下图所示：
@@ -22,7 +24,7 @@ tagline: by wubin
 
 经过数据链路层封装的数据称为帧（frame）。传输媒介不同，帧的类型也不同。比如，以太网上传输的是以太网帧（ethernet frame），而令牌环网络上传输的则是令牌环帧（token ring frame）。以以太网帧为例，其封装格式如下图所示：
 
-![以太网帧封装](The-Encapsulation-of-Ethernet-Frame.png)
+![以太网帧封装](/img/The-Encapsulation-of-Ethernet-Frame.png)
 
 以太网帧使用6字节的目的物理地址和6字节的源物理地址来表示通信的双方。4字节CRC字段对帧的其他部分提供循环冗余校验。
 
