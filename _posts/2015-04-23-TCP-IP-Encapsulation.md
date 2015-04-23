@@ -1,9 +1,9 @@
 ---
-layout:post
-category:Linux高性能服务器编程
-title:TCP/IP协议详解-封装
-tags:[TCP/IP,Network]
-tagline:by wubin
+layout: post
+category: Linux高性能服务器编程
+title: TCP/IP协议详解-封装
+tags: [TCP/IP,Network]
+tagline: by wubin
 ---
 
 上层协议是如何使用下层协议提供的服务的呢？其实这是通过封装（Encapsulation）实现的。应用程序数据在发送到物理网络上之前，将沿着协议栈从上往下依次传递。每层协议都将在上层数据的基础上加上自己的头部信息（有时还包括尾部信息），以实现该层的功能，这个过程就称为封装，如下图所示：
