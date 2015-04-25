@@ -1,6 +1,7 @@
 ---
 layout: post
 category: Leetcode
+title: House Robber
 tags: [Leetcode,C++,algorithm,DP]
 tagline: by wubin
 ---
@@ -16,7 +17,7 @@ Given a list of non-negative integers representing the amount of money of each h
 这道题要用到动态规划，假设sum(i)表示从第0家到第i家（共i+1户）robber所能偷窃到的最大金额数，那么：
 
 * i = 0时，sum(0) = nums[0]
-* i = 1是，sum(1) = max(nums[0], nums[1])
+* i = 1时，sum(1) = max(nums[0], nums[1])
 * 2 <= i <= n - 1时，sum(i) = max(sum(i-1), sum(i-2) + nums[i])
 
 ###C++代码如下：
