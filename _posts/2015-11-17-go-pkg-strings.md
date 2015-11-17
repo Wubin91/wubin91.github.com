@@ -12,16 +12,16 @@ tags: [Go, strings, package]
 
 下面是Go strings包提供的一些函数：
 
-* ##func Compare(a,b string) int
+* ###func Compare(a,b string) int
 
 直接比较a，b两个字符串，若a==b，返回0；若a<b，返回-1；若a>b，返回1。这与Go内置的string比较操作符==，<，>效果是一样的。貌似有点多余了。
 
-* func Contains(s,substr string) bool
+* ###func Contains(s,substr string) bool
 
 判断s中是否包含substr。
 
 	strings.Contains("seafood","")	//true
-	strings.Contains("","")	//true
+	strings.Contains("","")		//true
 
 * func ContainsAny(s,chars string) bool
 
