@@ -113,6 +113,8 @@ FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个
 
 * ###_func IndexFunc(s string,f func(rune) bool) int_
 
+返回s中第一个满足函数f的字符的位置。
+
 	func main() {
 		f := func(c rune) bool {
 			return unicode.Is(unicode.Han,c)   
@@ -120,5 +122,12 @@ FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个
 		fmt.Println(strings.IndexFunc("Hello, 世界",f))
 		fmt.Println(strings.IndexFunc("Hello, world",f))
 	}
+
+* ###_func Join(a []string,sep string) string_
+
+以sep为分隔符，将a组成一个长字符串。
+
+	s := []string{"foo","bar","baz"}
+	strings.Join(s,",")	// "foo,bar,baz"
 
 
