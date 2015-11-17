@@ -10,9 +10,11 @@ tags: [Go, strings, package]
 
 前段时间买了本《Go语言编程》，看了下整体上还不错，就是省略了很多细节的东西，也许这是中文教材的通病吧，所以就去https://golang.org官网上找资料看了。觉得还是需要边学边记才会加深印象，达到更好的效果。
 
+<!--more-->
+
 下面是Go strings包提供的一些函数：
 
-* ###func Compare(a,b string) int
+* ###_func Compare(a,b string) int_
 
 直接比较a，b两个字符串，若a==b，返回0；若a<b，返回-1；若a>b，返回1。这与Go内置的string比较操作符==，<，>效果是一样的。貌似有点多余了。
 
