@@ -14,18 +14,18 @@ tags: [Go, strings, package]
 
 下面是Go strings包提供的一些函数：
 
-* ###func Compare(a,b string) int
+* ####func Compare(a,b string) int
 
 直接比较a，b两个字符串，若a==b，返回0；若a<b，返回-1；若a>b，返回1。这与Go内置的string比较操作符==，<，>效果是一样的。貌似有点多余了。
 
-* ###func Contains(s,substr string) bool
+* ####func Contains(s,substr string) bool
 
 判断s中是否包含substr。
 
 	strings.Contains("seafood","")	//true
 	strings.Contains("","")		//true
 
-* ###func ContainsAny(s,chars string) bool
+* ####func ContainsAny(s,chars string) bool
 
 若字符串chars中有一个字符出现在s中，则返回true，否则返回false。
 
@@ -33,7 +33,7 @@ tags: [Go, strings, package]
 	strings.ContainsAny("foo","")		//false
 	strings.ContainsAny("","")		//false
 
-* ###func ContainsRune(s string, r rune) bool
+* ####func ContainsRune(s string, r rune) bool
 
 rune类型，即字符char型，在Go中它与int32是同一个类型。
 这个函数判断r是否在s中。
@@ -41,26 +41,26 @@ rune类型，即字符char型，在Go中它与int32是同一个类型。
 	strings.ContainsRune("team",'a')	//true
 	strings.ContainsRune("team",97)		//true, 'a'=97
 
-* ###func Cou(s,sep string) int
+* ####func Cou(s,sep string) int
 
 计算s中出现了多少个非重叠的sep字符串，如果sep为空""，那么就返回1+s字符串的长度。
 
 	strings.Count("cheese","e")	//3
 	strings.Count("five","")	//5
 
-* ###func EqualFold(s,t string) bool
+* ####func EqualFold(s,t string) bool
 
 s和t忽略大小写是否相等。
 
 	strings.EqualFold("Go","go")	//true
 
-* ###—func Fields(s string) []string
+* ####func Fields(s string) []string
 
 根据s中的一个或多个连续的空格符把s split成一个数组并返回，若s只有空格，则返回一个空的string list
 
 	stringsFields(" foo  bar baz  ")	// ["foo" "bar" "baz"]
 
-* ###func FieldsFunc(s string, f func(rune) bool) []string
+* ####func FieldsFunc(s string, f func(rune) bool) []string
 
 FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个字符串列表后返回。如果s中所有的字符都满足函数f或者s本身为空，那么返回空的列表。
 
@@ -85,33 +85,33 @@ FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个
 	// ["foo1" "bar2" "baz3"]
 	// [" " ";" "," "..."]
 
-* ###func HasPrefix(s,prefix string) bool
+* ####func HasPrefix(s,prefix string) bool
 
 字符串s是否具有前缀prefix。
 
 	strings.HasPrefix("123","")	//true
 
-* ###func HasSuffix(s,suffix string) bool
+* ####func HasSuffix(s,suffix string) bool
 
 字符串s是否具有后缀suffix。
 
-* ###func Index(s,sep string) int
+* ####func Index(s,sep string) int
 
 返回在s中找到的第一个sep的位置，如果没找到，则返回-1。
 
 	strings.Index("","")	// 0
 
-* ###func IndexAny(s,chars string) int
+* ####func IndexAny(s,chars string) int
 
 返回在s中找到的第一个属于sep的字符的位置，如果没找到，则返回-1。
 
 	strings.IndexAny("","")	// -1
 
-* ###func IndexByte(s string,c byte) int
+* ####func IndexByte(s string,c byte) int
 
 返回在s中找到的第一个c的位置，如果没找到，则返回-1。
 
-* ###func IndexFunc(s string,f func(rune) bool) int
+* ####func IndexFunc(s string,f func(rune) bool) int
 
 返回s中第一个满足函数f的字符的位置。
 
@@ -123,13 +123,13 @@ FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个
 		fmt.Println(strings.IndexFunc("Hello, world",f))	// -1
 	}
 
-* ###func Join(a []string,sep string) string
+* ####func Join(a []string,sep string) string
 
 以sep为分隔符，将a组成一个长字符串。
 
 	s := []string{"foo","bar","baz"}
 	strings.Join(s,",")	// "foo,bar,baz"
 
-* ###func LastIndex(s,sep string) int
+* ####func LastIndex(s,sep string) int
 
 
