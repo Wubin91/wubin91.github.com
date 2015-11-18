@@ -132,4 +132,87 @@ FieldFunc将s中满足函数f的字符(串)当成分割点，将s分割成一个
 
 * **func LastIndex(s,sep string) int**
 
+返回在s中找到的最后sep实例的位置。否则返回-1。
+
+* **func LastIndexAny(s,chars string) int**
+
+返回在s中找到的最后一个属于chars的字符的位置，否则返回-1。
+
+* **func LastIndexByte(s string,c byte) int**
+
+返回在s中找到的最后一个c实例的位置，否则返回-1。
+
+* **func LastIndexFunc(s string,f func(rune) bool) int**
+
+返回s中最后一个满足函数f的字符的位置，否则返回-1。
+
+* **func Map(mapping func(rune) rune,s string) string**
+
+返回一个新字符串，该新字符串每一个字符都是从源字符串中的字符通过map函数映射得到，如果某个源字符通过映射函数后得到一个负值，那么该源字符被丢弃。
+
+	func main() {
+		rot13 := func(r rune) rune {
+			switch {
+				case r >= 'A' && r <= 'Z':
+					return 'A' + (r - 'A' + 13) % 26
+				case r >= 'a' && r <= 'z':
+					return 'a' + (r - 'a' + 13) % 26
+			}
+			return r
+		}
+		fmt.Println(strings.Map(rot13,"Twas brillig and the slithy gopher..."))
+	}
+	// "Gjnf oevyyvt naq gur fyvgul tbcure..."
+
+* **func Repeat(s string,count int) string**
+
+返回一个由count个s拷贝组成的新字符串。
+
+* **func Replace(s,old,new string,n int) string**
+
+将s中出现的old字符串n次替换为new字符串，若old=""，而new!=""，那么新字符串为s每一个字符之间插入new之后产生的新字符串。若n=-1，则替换的次数无限制。
+
+	strings.Replace("oink oink oink","k","ky",2)	// oinky oinky oink
+	string.Replace("oink oink oink","moo",-1)	// moo moo moo
+	
+* **func Split(s,sep string) []string**
+
+	strings.Splite("a,b,c","")	//["a" "," "b" "," "c"]
+	
+* **func SplitAfter(s,sep string) []string**
+
+每次在sep之后split字符串s，返回得到的字符串列表。如果sep=""，那么这将把s分割成一个个的字符形成的字符串，效果和SplitAfterN当count=-1时一样。
+
+	strings.SplitAfter("a,b,c",",")	// ["a," "b," "c"]
+	strings.SplitAfter("a,b,c","")	// ["a" "," "b" "," "c"]
+
+* **func SplitAfterN(s,sep string,n int) []string**
+
+与SplitAfter相比，多了一个n参数，指明返回string list中字符串的个数。
+
+	1. n > 0: at most n substrings; the last substring will be the unsplit remainder
+	2. n == 0: the result is nil (zero substrings)
+	3. n < 0: all substrings
+
+	strings.SplitAfterN("a,b,c",",",2)	// ["a," "b,c"]
+
+* **func SplitN(s,sep string,n int) []string**
+
+与Split相比，多了一个n参数，指明返回string list中字符串的个数。
+
+* **func Title(s string) string**
+
+将字符串中单词首字母大写。
+
+* **func ToLower(s string) string**
+
+将字符串中所有字母变成小写。
+
+* **func ToTitle(s string) string**
+
+把s中所有字母变为大写。
+
+* **func ToUpper(s string) string**
+
+将字符串中所有字母变为大写。
 
